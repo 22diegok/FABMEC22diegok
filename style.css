@@ -1,0 +1,127 @@
+:root {
+  --azul-escuro: #0f2c59;
+  --azul-medio: #1e4173;
+  --azul-claro: #f2f5f9;
+  --dourado: #d4af37;
+  --texto: #282828;
+}
+
+/* Força os botões de controle a funcionar perfeitamente nas laterais superiores */
+.reveal .controls {
+  color: var(--dourado) !important;
+  z-index: 9999 !important;
+  bottom: 50px !important;
+  right: 20px !important;
+}
+.reveal .controls-arrow { color: var(--dourado) !important; }
+.reveal .progress { height: 6px !important; z-index: 9999 !important; }
+.reveal .progress span { background: var(--dourado) !important; }
+
+.reveal section {
+  padding: 0 !important;
+  text-align: left;
+  font-family: 'Arial', sans-serif;
+  color: var(--texto);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* --- ESTILO CAPA --- */
+.slide-capa {
+  background-color: var(--azul-escuro) !important;
+  color: white !important;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-capa { text-align: center; padding: 30px; max-width: 950px; }
+.slide-capa h1 {
+  font-family: 'Georgia', serif !important;
+  color: white !important;
+  font-size: 2.8em !important;
+  font-weight: bold;
+  text-transform: none !important;
+  margin-bottom: 15px !important;
+}
+.slide-capa .instituicao { font-size: 0.65em; color: #e0e0e0; margin-bottom: 35px; font-weight: bold; letter-spacing: 1px; }
+.slide-capa .subtitulo { font-size: 1.4em; color: var(--dourado); margin-bottom: 35px; font-style: italic; }
+.slide-capa .autores { font-size: 0.75em; line-height: 1.6; }
+.beamer-footer-capa { position: absolute; bottom: 0; left: 0; width: 100%; height: 25px; background-color: var(--dourado); }
+
+/* --- CABEÇALHO --- */
+.beamer-header { background-color: var(--azul-escuro); padding: 15px 45px; height: 115px; box-sizing: border-box; }
+.beamer-header .secao { display: block; font-size: 0.6em; color: var(--dourado); font-weight: bold; }
+.beamer-header h2 {
+  color: white !important;
+  font-family: 'Georgia', serif !important;
+  font-size: 1.35em !important; /* +20% Ampliado */
+  margin: 5px 0 0 0 !important;
+  text-transform: none !important;
+  font-weight: bold;
+}
+
+/* Empilha (imagem embaixo) APENAS quando a imagem tiver a classe right (Slide de Histórico) */
+.colunas-layout:has(.image-container-right) {
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+.colunas-layout:has(.image-container-right) > div {
+    width: 100% !important;
+}
+
+.image-container-right, .image-container-left {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.image-container-right img, .image-container-left img {
+    max-width: 55%; /* Aumente ou diminua essa porcentagem se precisar */
+    height: auto;
+}
+
+.slide-content { padding: 35px 50px; height: calc(100% - 150px); box-sizing: border-box; }
+.colunas-layout { display: flex; gap: 30px; justify-content: space-between; align-items: center; }
+.split-block { width: 48% !important; margin-bottom: 0 !important; }
+
+.beamer-block { margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+.beamer-block .block-title { background-color: var(--azul-escuro); color: white; font-size: 0.78em; padding: 10px 18px; font-weight: bold; }
+.beamer-block .block-body { background-color: var(--azul-claro); font-size: 1.1em; padding: 18px; line-height: 1.8; }
+.beamer-block-exemplo { font-size: 1.1em; background-color: #fcf8e3; border-left: 6px solid var(--dourado); padding: 18px; margin-top: 25px; line-height: 1.6; }
+.texto-interno { font-size: 1.2em; line-height: 1.8; margin-bottom: 15px; }
+
+/* --- LISTAS E TEXTOS INTERNOS --- */
+.lista-academica { font-size: 1.2em; line-height: 1.8; margin-left: 33px !important; }
+.lista-academica li { margin-bottom: 15px; }
+
+/* --- IMAGENS INTEGRADAS --- */
+.image-container-right, .image-container-left { width: 42%; display: flex; align-items: center; justify-content: center; }
+.image-container-right img, .image-container-left img { width: 100%; height: auto; border: 1px solid #ccc; border-radius: 4px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
+
+/* --- SEÇÃO DE VÍDEOS --- */
+.video-container { width: 45%; }
+.video-placeholder { width: 100%; height: 260px; background-color: #000; border: 2px dashed var(--azul-medio); display: flex; align-items: center; justify-content: center; color: #fff; border-radius: 4px; }
+.video-box-half { width: 48%; }
+.video-placeholder-title { font-size: 0.7em; font-weight: bold; margin-bottom: 8px; color: var(--azul-escuro); }
+.video-frame-box { width: 100%; height: 280px; background-color: #1a1a1a; border-radius: 6px; display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 20px rgba(0,0,0,0.6); }
+.video-mock-icon { color: #aaa; font-size: 0.7em; font-weight: bold; cursor: pointer; }
+.video-mock-icon:hover { color: var(--dourado); }
+
+/* --- TABELAS ABNT --- */
+.tabela-wrapper { margin-top: 5px; }
+.tabela-abnt { width: 100%; border-collapse: collapse !important; font-size: 0.75em !important; }
+.tabela-abnt th { border-top: 2px solid #000 !important; border-bottom: 1px solid #000 !important; font-weight: bold; padding: 12px 15px; }
+.tabela-abnt td { padding: 12px 15px; border: none !important; }
+.tabela-abnt .linha-total td { border-top: 1px solid #000 !important; border-bottom: 2px solid #000 !important; font-weight: bold; }
+.tabela-fonte { font-size: 0.55em; color: #666; margin-top: 10px; font-style: italic; }
+
+/* --- REFERÊNCIAS --- */
+.lista-referencias { font-size: 0.65em; line-height: 1.8; list-style-type: none; margin-left: 0 !important; }
+.lista-referencias li { margin-bottom: 15px; }
+
+/* --- RODAPÉ --- */
+.beamer-footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 35px; display: flex; font-size: 0.5em; color: white; box-sizing: border-box; }
+.footer-left { background-color: var(--azul-medio); width: 80%; padding: 8px 20px; }
+.footer-right { background-color: var(--azul-escuro); width: 20%; padding: 8px 20px; text-align: right; font-weight: bold; }
